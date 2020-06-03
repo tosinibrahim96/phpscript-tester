@@ -6,12 +6,13 @@ unset($files[0]);
 unset($files[1]);
 
 
-// Initialize output template for JSON
-$json_object = ['name' => '', 'id' => '', 'language' => '', 'status' => '', 'output' => '', 'file' => '', 'email' => ''];
+
 $output = [];
 
 foreach ($files as $file) {
   $extension = explode('.', $file);
+  // Initialize output template for JSON
+  $json_object = ['name' => '', 'id' => '', 'language' => '', 'status' => '', 'output' => '', 'file' => '', 'email' => ''];
   $script_types = ['php' => 'php', 'js' => 'node', 'py' => 'python'];
 
   //skip unsupported file formats
