@@ -36,8 +36,9 @@ foreach ($files as $file) {
       $json_object['file'] = $file;
       $json_object['email'] = $match[4];
     }
+    array_push($output,$json_object);
   }
-  $output[] = $json_object;
+
 }
 
 
