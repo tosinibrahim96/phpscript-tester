@@ -21,7 +21,6 @@ foreach ($files as $file) {
   } else {
     $run = $script_types[$extension[1]];
     $file_output = exec($run . " scripts/" . $file);
-    var_dump($run);
 
     /**We are trying to capture all the important info needed for the JSON output  */
     if (preg_match('/Hello World, this is (.*?) with HNGi7 ID (.*?) using (.*?) for stage 2 task (.*)/', $file_output, $match) == 1) {
@@ -37,7 +36,6 @@ foreach ($files as $file) {
       $json_object['file'] = $file;
       $json_object['email'] = $match[4];
     }
-    var_dump($json_object);
     array_push($output, $json_object);
   }
 }
